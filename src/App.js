@@ -1,5 +1,5 @@
 import React from "react";
-import logo from './logo.svg';
+import logo from './secondLogo.png';
 import './App.css';
 
 /**
@@ -70,13 +70,13 @@ function App() {
   return (
     
     <>
-    
+    <h1>JSX is Cool!</h1>
     <img src={logo} className="App-logo" alt="logo" />
       <h3>User names</h3>
       <ul>
         {users.map((user) => {
           return <li key={user.id} name={user.name}>{user.name}</li>
-        })}
+        })} 
       </ul>
 
       <button>Hide Element Below</button>
