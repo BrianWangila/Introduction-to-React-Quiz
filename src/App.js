@@ -37,7 +37,6 @@ function Parent() {
   );
 
   function handleChange(){
-    console.log("try")
     setValue("second value")
   }
 
@@ -80,7 +79,7 @@ function App() {
   return (
     
     <>
-      <h1>JSX is Cool!</h1>
+      <h1 style={{color:"blue"}}>JSX is Cool!</h1>
       <img src={logo} className="App-logo" alt="logo" />
         <h3>User names</h3>
         <ul>
