@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import logo from './secondLogo.png';
 import './App.css';
 
@@ -20,11 +20,13 @@ const users = [
 
 //  Challenge: Uncomment this code to complete quiz
 
-function Child() {
+function Child({handleChange}) {
+
+  
   return (
     <>
       <div>Child</div>
-      <button>Change Parent Value</button>
+      <button onClick={handleChange}>Change Parent Value</button>
     </>
   );
 }
@@ -33,6 +35,11 @@ function Parent() {
   const [value, setValue] = React.useState(
     "I need to be updated from my child"
   );
+
+  function handleChange(){
+    console.log("try")
+    setValue()
+  }
 
   return (
     <>
@@ -62,8 +69,7 @@ function Parent() {
 // Comment above code after completion
 
 function App() {
-  const [] = React.useState(true);
-  const [isHidden, setIsHidden] = useState(false)
+  const [isHidden, setIsHidden] = React.useState(true);
 
   function handleClick(){
     console.log("done")
@@ -83,7 +89,7 @@ function App() {
           })} 
         </ul>
 
-        <button onClick={handleClick}>{isHidden ? "Hide Element Below" : "Show Element Below"}</button>
+        <button onClick={handleClick}>{isHidden ? "Hide Elements Below" : "Show Elements Below"}</button>
 
         <div className={className}>Toggle Challenge
           <Parent>
