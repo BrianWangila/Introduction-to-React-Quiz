@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import logo from './secondLogo.png';
 import './App.css';
 
@@ -13,14 +13,12 @@ const users = [
 ];
 
 
-
-
 // comment this out after completion and uncomment code below it to proceed
-function Child() {
-  return <div>This is children content</div>;
-}
-/**
-  Challenge: Uncomment this code to complete quiz
+// function Child() {
+//   return <div>This is children content</div>;
+// }
+
+//  Challenge: Uncomment this code to complete quiz
 
 function Child() {
   return (
@@ -50,22 +48,28 @@ function Parent() {
     </>
   );
 }
-Uncomment this to tackle quiz
-**/
+// Uncomment this to tackle quiz
 
-// Comment out after completion
-function Parent() {
-  return (
-    <div>
-      <h3>Parent Component</h3>
-    </div>
-  );
-}
+
+// // Comment out after completion
+// function Parent() {
+//   return (
+//     <div>
+//       <h3>Parent Component</h3>
+//     </div>
+//   );
+// }
 // Comment above code after completion
 
 function App() {
   const [] = React.useState(true);
+  const [isHidden, setIsHidden] = useState(false)
 
+  function handleClick(){
+    console.log("done")
+    setIsHidden((isHidden) => !isHidden)
+  }
+  const className = isHidden ? "" : "screen"
   
   return (
     
@@ -79,11 +83,13 @@ function App() {
           })} 
         </ul>
 
-        <button>Hide Element Below</button>
-        <div>Toggle Challenge</div>
-        <Parent>
-          <Child/>
-        </Parent>
+        <button onClick={handleClick}>{isHidden ? "Hide Element Below" : "Show Element Below"}</button>
+
+        <div className={className}>Toggle Challenge
+          <Parent>
+            <Child/>
+          </Parent>
+        </div>
     </>
   );
 }

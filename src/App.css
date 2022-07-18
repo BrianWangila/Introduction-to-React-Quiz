@@ -55,3 +55,7 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+.screen {
+  visibility: hidden;
+}
