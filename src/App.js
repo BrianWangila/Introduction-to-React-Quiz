@@ -70,21 +70,20 @@ function App() {
   return (
     
     <>
-    <h1>JSX is Cool!</h1>
-    <img src={logo} className="App-logo" alt="logo" />
-      <h3>User names</h3>
-      <ul>
-        {users.map((user) => {
-          return <li key={user.id} name={user.name}>{user.name}</li>
-        })} 
-      </ul>
+      <h1>JSX is Cool!</h1>
+      <img src={logo} className="App-logo" alt="logo" />
+        <h3>User names</h3>
+        <ul>
+          {users.map((user) => {
+            return <li key={user.id} name={user.name}>{user.name}</li>
+          })} 
+        </ul>
 
-      <button>Hide Element Below</button>
-
-      <div>Toggle Challenge</div>
-      <Parent>
-      <Child/>
-      </Parent>
+        <button>Hide Element Below</button>
+        <div>Toggle Challenge</div>
+        <Parent>
+          <Child/>
+        </Parent>
     </>
   );
 }
