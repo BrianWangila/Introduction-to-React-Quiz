@@ -12,6 +12,9 @@ const users = [
   { name: "Billy Doe", id: 3 }
 ];
 
+
+
+
 // comment this out after completion and uncomment code below it to proceed
 function Child() {
   return <div>This is children content</div>;
@@ -62,19 +65,26 @@ function Parent() {
 
 function App() {
   const [] = React.useState(true);
+
+  
   return (
     
     <>
     
     <img src={logo} className="App-logo" alt="logo" />
       <h3>User names</h3>
-      <ul></ul>
+      <ul>
+        {users.map((user) => {
+          return <li key={user.id} name={user.name}>{user.name}</li>
+        })}
+      </ul>
+
       <button>Hide Element Below</button>
 
       <div>Toggle Challenge</div>
       <Parent>
-      <Child />
-    </Parent>
+      <Child/>
+      </Parent>
     </>
   );
 }
