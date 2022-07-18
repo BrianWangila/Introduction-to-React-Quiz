@@ -22,7 +22,7 @@ const users = [
 
 function Child({handleChange}) {
 
-  
+
   return (
     <>
       <div>Child</div>
@@ -38,7 +38,7 @@ function Parent() {
 
   function handleChange(){
     console.log("try")
-    setValue()
+    setValue("second value")
   }
 
   return (
@@ -50,7 +50,7 @@ function Parent() {
       </div>
 
       <div className="wrapper">
-        <Child />
+        <Child handleChange={handleChange}/>
       </div>
     </>
   );
